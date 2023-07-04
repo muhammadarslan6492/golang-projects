@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 
 // custome type decorator
@@ -22,6 +25,10 @@ func newDexk() deck  {
 	return cards
 }
 
+func deal(d deck, handSize int)(deck, deck){
+	return d[:handSize], d[handSize:]
+}
+
 func (d deck) print() {
 
 	for i, card := range d {
@@ -29,3 +36,8 @@ func (d deck) print() {
 	}
 
 }
+
+// convert slice of deck into single string
+func(d deck) toString() string {
+return strings.Join([]string(d), ",")
+} 

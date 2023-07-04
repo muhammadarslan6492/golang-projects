@@ -1,9 +1,11 @@
 package main
 
+import "fmt"
+
 func main() {
 
 	cards := newDexk()
 
-	cards.print()
+	fmt.Println(cards.toString())
 
 }
